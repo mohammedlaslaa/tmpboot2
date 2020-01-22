@@ -1,6 +1,11 @@
 <?php
 include 'function.php';
 session_start();
+
+define('SUPER_ADMIN', 100);
+define('ADMIN', 50);
+define('USER', 20);
+
 ?>
 
 <!DOCTYPE html>
@@ -116,16 +121,18 @@ session_start();
     foreach ($jsonto as $key) {
       if ($_POST['email'] == $key['email'] && password_verify($_POST["password"], $key['pwd'])) {
         $_SESSION['isConnected'] = "success";
+        $_SESSION['user_right'] = $key['right'];
         header("Location: index.php");
       }
     }
+    
     header("Location: index.php?error=display");
   }
   require_once('footer.php');
   ?>
-  <!-- /.container -->
 
 
+<!-- /.container -->
 
 
 

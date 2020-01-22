@@ -28,16 +28,14 @@
                 foreach ($jsonart as $val) {
                     if ($_GET['cat'] == md5($val['category_id'])) {
                         echo "<h1>" . $val['titre'] . "</h1><br>";
-                        echo "<p>" . substr($val['description'], 0, 60) . "..." . "</p>";
+                        echo "<p>" . substr($val['description'], 0, 80) . "..." . "</p>";
                         echo "<a href=article.php?id=" . md5($val['id']) . ">Lire la suite</a>";
                     }
                 }
                 ?>
             </div>
             <?php require_once('sideright.php');?>
-    
         </div>
-
     </div>
     <?php 
     

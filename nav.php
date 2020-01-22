@@ -7,6 +7,9 @@
                 echo '<a class="navbar-brand text-white" href="index.php?session=deconnect">Se déconnecter</a>';
             }
 
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] >= ADMIN) {
+                echo '<a class="navbar-brand text-white" href="">Admin</a>';
+            }
             ?>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,12 +34,11 @@
               </ul>
           </div>
       </div>
-
   </nav>
   <!-- <div aria-label="breadcrumb">
       <ol class="breadcrumb">
           <?php
-          
+
             ?>
       </ol>
   </div> -->

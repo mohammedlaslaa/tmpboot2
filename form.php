@@ -1,5 +1,3 @@
-
-
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
@@ -17,14 +15,18 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="email" class="form-control" placeholder="email" name="email">
+                        <input type="email" class="form-control" placeholder="email" name="email" value="<?php if (isset($_POST['email'])) {
+                                                                                                                echo htmlspecialchars($_POST['email']);
+                                                                                                            } ?>">
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" name='password' placeholder="password">
+                        <input type="password" class="form-control" name='password' placeholder="password" value="<?php if (isset($_POST['password'])) {
+                                                                                                                        echo htmlspecialchars($_POST['password']);
+                                                                                                                    } ?>">
                     </div>
                     <div class="row align-items-center remember">
                         <input type="checkbox">Remember Me

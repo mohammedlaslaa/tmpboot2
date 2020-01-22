@@ -28,6 +28,13 @@ session_start();
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <?php 
+      if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success"){
+        echo '<a class="navbar-brand text-white" href="?session=deconnect">Se déconnecter</a>';
+      }
+      
+      ?>
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -54,6 +61,10 @@ session_start();
   <?php
 
   if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") {
+    if(isset($_GET["session"]) && $_GET["session"] == 'deconnect'){
+      $_SESSION['isConnected'] = "";
+      header("Location: index.php");
+    }
   ?>
     <!-- Page Content -->
     <div class="container">

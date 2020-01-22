@@ -1,6 +1,10 @@
-<?php session_start() ?>
+<?php
+session_start();
+require('include/define.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +33,7 @@
                 }
                 ?>
             </div>
-            <?php require_once('sideright.php');?>
+            <?php require_once('sideright.php'); ?>
         </div>
     </div>
     <?php require_once('footer.php') ?>

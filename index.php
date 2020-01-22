@@ -1,11 +1,20 @@
 <?php
-include 'function.php';
+include 'include/function.php';
 session_start();
+require('include/define.php');
 
-define('SUPER_ADMIN', 100);
-define('ADMIN', 50);
-define('USER', 20);
+$jsonto = json_decode(file_get_contents('data/user.json'), true);
 
+if (isset($_POST['email']) && isset($_POST['password'])) {
+  foreach ($jsonto as $key) {
+    if ($_POST['email'] == $key['email'] && password_verify($_POST["password"], $key['pwd'])) {
+      $_SESSION['isConnected'] = "success";
+      $_SESSION['user_right'] = $key['right'];
+      header("Location: index.php");
+    }
+  }
+  header("Location: index.php?error=display");
+}
 ?>
 
 <!DOCTYPE html>
@@ -111,30 +120,13 @@ define('USER', 20);
     require_once('form.php');
   }
 
-  $jsonto = json_decode(file_get_contents('data/user.json'), true);
-
   // $mail = isset($_SESSION['email']) ? $_SESSION['email'] : "";
   // $_SESSION['password'] = isset($_POST["password"]) ? $_POST["password"] : "";
   // $_SESSION['email'] = isset($_POST["email"]) ? $_POST["email"] : "";
 
-  if (isset($_POST['email']) && isset($_POST['password'])) {
-    foreach ($jsonto as $key) {
-      if ($_POST['email'] == $key['email'] && password_verify($_POST["password"], $key['pwd'])) {
-        $_SESSION['isConnected'] = "success";
-        $_SESSION['user_right'] = $key['right'];
-        header("Location: index.php");
-      }
-    }
-    
-    header("Location: index.php?error=display");
-  }
   require_once('footer.php');
   ?>
-
-
-<!-- /.container -->
-
-
+  <!-- /.container -->
 
 </body>
 

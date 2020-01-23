@@ -26,9 +26,9 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
         <div class="row">
             <?php require('../element/sideleftadmin.php') ?>
             <div class="col-md-8 text-center">
-                <form class="mx-auto col-6">
+                <form class="mx-auto col-6 createform" method="post">
                     <div class="form-group">
-                        <input type="email" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="title">
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" id="txtarea" name="txtarea" rows="3"></textarea>
@@ -38,16 +38,12 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
                     </div>
                 </form>
                 <?php
-                // if(isset($_POST['title']) && isset($_POST['txtarea'])){
-
-                // }
-
 
                 ?>
             </div>
         </div>
     </div>
     <?php
-    require_once('../element/footer.php');
+    require_once('../element/footeradmin.php');
     ?>
 </body>

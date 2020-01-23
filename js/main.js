@@ -1,12 +1,11 @@
 $(document).ready(function () {
-    $('#formcat').on('submit', function (e) {
-        var formData = {
-            'name': $('#newscat').val()
-        };
-        alert(formData);
+    $('.createform').submit( function (e) {
+        
+        console.log($(this).serializeArray());
+        let mydata = $(this).serialize();
+        $.post('/tmpboot2/admin/traitement.php', mydata);
+        
         e.preventDefault();
     })
 
 })
-
-alert('coucou')

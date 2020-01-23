@@ -30,7 +30,7 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
             $category = file_get_contents('../data/categories.json');
             $resultCat = json_decode($category, true);
             foreach ($resultCat as $key => $value) {
-                if ($_GET['id'] == $key) {
+                if ($_GET['id'] == $value['id']) {
                     echo "<h3 class='text-center mt-3'>" . $value['name'] . "</h3>";
                 }
             }
@@ -39,6 +39,6 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
     </div>
     </div>
     <?php
-    require_once('../element/footer.php');
+    require_once('../element/footeradmin.php');
     ?>
 </body>

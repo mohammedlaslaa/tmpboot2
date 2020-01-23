@@ -50,7 +50,7 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
     <?php
-    require_once('../element/footer.php');
+    require_once('../element/footeradmin.php');
     ?>
 </body>
 

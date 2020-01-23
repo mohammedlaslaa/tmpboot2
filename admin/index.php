@@ -30,7 +30,7 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
     </div>
   </div>
   <?php
-  require_once('../element/footer.php');
+  require_once('../element/footeradmin.php');
   ?>
 </body>
 

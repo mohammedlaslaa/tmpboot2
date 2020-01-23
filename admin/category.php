@@ -5,7 +5,6 @@ require('../include/define.php');
 $jsonto = json_decode(file_get_contents('../data/user.json'), true);
 if (isset($_GET['delete'])) {
     deleteElementData($_GET['delete'], 'categories.json');
-    header('Location: category.php');
 }
 ?>
 <!DOCTYPE html>
@@ -56,7 +55,7 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
     <?php
-    require_once('../element/footer.php');
+    require_once('../element/footeradmin.php');
     ?>
 </body>
 

@@ -20,13 +20,12 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
 </head>
 
 <body class="bodyadmin">
+<?php require('../element/titleadmin.php') ?>
   <!-- Page Content -->
   <div class="container-fluid">
     <div class="row">
       <?php require('../element/sideleftadmin.php') ?>
-  
       <div class="col-md-8">
-        
       </div>
     </div>
   </div>

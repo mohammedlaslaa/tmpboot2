@@ -1,4 +1,5 @@
 <?php
+
 include '../include/function.php';
 session_start();
 require('../include/define.php');
@@ -30,29 +31,22 @@ if (isset($_GET['delete'])) {
         <div class="row">
             <?php require('../element/sideleftadmin.php') ?>
             <div class="col-md-8 text-center my-2">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $category = file_get_contents('../data/categories.json');
-                        $resultCat = json_decode($category, true);
-                        foreach ($resultCat as $key => $value) {
-                            echo "<tr>";
-                            echo "<td>" . $value['id'] . "</td>";
-                            echo "<td>" . $value['name'] . "</td>";
-                            echo '<td>' . '<a href=categorydetail.php?id=' . $value['id'] . '>Voir</a> / ' . '<a href=?delete=' . $value['id'] . '>Supprimer</a> / '  . '<a href=modifycategory?edit=' . $value['id'] . '>Modifier</a> </td>';
-                            echo "</tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                <form action="" class="text-center" id="formcat" method="post">
+                    <input type="text" class="form-control" id="newscat" name="newscat" aria-label="Text input with checkbox">
+                    <input type="submit" value="Ajouter">
+                </form>
             </div>
+            <?php
+            $category = file_get_contents('../data/categories.json');
+            $resultCat = json_decode($category, true);
+            if (isset($_POST['newscat'])) {
+                $resId = max(array_column($resultCat, 'id')) + 1;
+                $newArray = [["name" => $_POST['newscat'], "id" => $resId]];
+                $array = array_merge($resultCat, $newArray);
+                $resultfinal = json_encode($array, JSON_PRETTY_PRINT);
+                file_put_contents('../data/categories.json', $resultfinal);
+            }
+            ?>
         </div>
     </div>
     <?php

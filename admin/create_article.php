@@ -20,23 +20,32 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
 </head>
 
 <body class="bodyadmin">
-<?php require('../element/titleadmin.php') ?>
+    <?php require('../element/titleadmin.php') ?>
     <!-- Page Content -->
     <div class="container-fluid">
         <div class="row">
             <?php require('../element/sideleftadmin.php') ?>
-        <div class="col-md-8">
-            <?php
-            $category = file_get_contents('../data/categories.json');
-            $resultCat = json_decode($category, true);
-            foreach ($resultCat as $key => $value) {
-                if ($_GET['id'] == $key) {
-                    echo "<h3 class='text-center mt-3'>" . $value['name'] . "</h3>";
-                }
-            }
-            ?>
+            <div class="col-md-8 text-center">
+                <form class="mx-auto col-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="txtarea" name="txtarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Créer un article">
+                    </div>
+                </form>
+                <?php
+                // if(isset($_POST['title']) && isset($_POST['txtarea'])){
+
+                // }
+
+
+                ?>
+            </div>
         </div>
-    </div>
     </div>
     <?php
     require_once('../element/footer.php');

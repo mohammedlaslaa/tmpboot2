@@ -37,7 +37,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
   <!-- Custom styles for this template -->
   <link href="css/blog-home.css" rel="stylesheet">
-
 </head>
 
 <body>

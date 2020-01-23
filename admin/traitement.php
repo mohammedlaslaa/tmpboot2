@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['title'])) {
+if (isset($_POST['title'])) {
     echo "coucou";
 }
 ?>

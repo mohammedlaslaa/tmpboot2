@@ -28,28 +28,38 @@ $jsonto = json_decode(file_get_contents('../data/categories.json'), true);
             <div class="col-md-8 text-center my-2">
                 <form class="mx-auto col-6">
                     <div class="form-group">
-                        <textarea class="form-control" id="txtarea" name="newscat" rows="3"></textarea>
+                        <input class="form-control" name="newscat"
+                        value=<?php 
+                        if(isset($_GET['edit'])){
+                            $_SESSION['value'] = $_GET['edit'];
+                            // var_dump($jsonto[0]['name']);
+                            foreach($jsonto as $val){
+                                if($_GET['edit'] == $val['id']){
+                                    echo htmlspecialchars($val['name']);
+                                }
+                            }
+                        }
+                        ?>
+                        >
+                        </input>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Créer un article">
+                        <input type="submit" value="Modifier">
                     </div>
                 </form>
 
             </div>
             <?php
-            if(isset($_GET['edit'])){
-                $_SESSION['numcat'] = $_GET['edit'];
-            }
-            if (isset($_GET['newscat'])) {
-                foreach ($jsonto as $val) {
-                    if ($_SESSION['numcat'] == $val['id']) {
-                        $val['name'] = $_GET['newscat'];
-                        array_replace($jsonto, $_GET['newscat']);
-                        file_put_contents('../data/categories.json', json_encode($jsonto));
-                        header("Location: addcategory.php");
-                    }
+            if(isset($_GET['newscat'])){
+                foreach($jsonto as $key => $val){
+                    if($_SESSION['value'] == $val['id']){
+                        $replace = [$key => ['name' =>$_GET['newscat'], 'id' => $val['id']] ];
+                        $arraysubs = array_replace($jsonto, $replace);
+                        $resultfinal = json_encode($arraysubs, JSON_PRETTY_PRINT);
+                        file_put_contents('../data/categories.json', $resultfinal);
                 }
             }
+        }
 
             ?>
         </div>

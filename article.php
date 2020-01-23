@@ -17,7 +17,7 @@ require('include/define.php');
 </head>
 
 <body>
-    <?php require_once('nav.php');
+    <?php require_once('element/nav.php');
     ?>
     <div class="container">
         <div class="row">
@@ -33,10 +33,10 @@ require('include/define.php');
                 }
                 ?>
             </div>
-            <?php require_once('sideright.php'); ?>
+            <?php require_once('element/sideright.php'); ?>
         </div>
     </div>
-    <?php require_once('footer.php') ?>
+    <?php require_once('element/footer.php') ?>
 </body>
 
 </html>

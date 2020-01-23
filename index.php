@@ -13,7 +13,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       header("Location: index.php");
     }
   }
-  header("Location: index.php?error=display");
+
+  if ($_SESSION['isConnected'] !== "success") {
+    header("Location: index.php?error=display");
+  }
 }
 ?>
 
@@ -39,7 +42,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 <body>
   <?php
-  require_once('nav.php');
+  require_once('element/nav.php');
   if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") {
     if (isset($_GET["session"]) && $_GET["session"] == 'deconnect') {
       disconnect();
@@ -109,7 +112,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         </div>
 
-        <?php require_once('sideright.php'); ?>
+        <?php require_once('element/sideright.php'); ?>
       </div>
       <!-- /.row -->
 
@@ -117,14 +120,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
   <?php
 
   } else {
-    require_once('form.php');
+    require_once('element/form.php');
   }
 
   // $mail = isset($_SESSION['email']) ? $_SESSION['email'] : "";
   // $_SESSION['password'] = isset($_POST["password"]) ? $_POST["password"] : "";
   // $_SESSION['email'] = isset($_POST["email"]) ? $_POST["email"] : "";
 
-  require_once('footer.php');
+  require_once('element/footer.php');
   ?>
   <!-- /.container -->
 

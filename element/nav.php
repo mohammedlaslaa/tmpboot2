@@ -10,7 +10,7 @@
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
                       <a class="nav-link" href="#">Home
-                          <span class="sr-only">(current)</span>
+                          <!-- <span class="sr-only">(current)</span> -->
                       </a>
                   </li>
                   <li class="nav-item">
@@ -25,14 +25,14 @@
                   <li class="nav-item">
                       <?php
                         if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") {
-                            echo '<a class="nav-link text-danger" href="index.php?session=deconnect">Se déconnecter</a>';
+                            echo '<a class="nav-link text-danger" href=' . __BASE_URI__ . '/index.php?session=deconnect>Se déconnecter</a>';
                         }
                         ?>
                   </li>
                   <li class="nav-item">
                       <?php
                         if (isset($_SESSION['user_right']) && $_SESSION['user_right'] >= ADMIN) {
-                            echo '<a class="nav-link text-primary" href="">Admin</a>';
+                            echo '<a class="nav-link text-primary" href=' . __BASE_URI_ADMIN__ . '/index.php>Admin</a>';
                         }
                         ?>
                   </li>

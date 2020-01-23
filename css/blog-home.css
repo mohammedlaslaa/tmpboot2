@@ -6,3 +6,7 @@
 body {
   padding-top: 56px;
 }
+
+.bodyadmin{
+  padding-top: 0px !important;
+}

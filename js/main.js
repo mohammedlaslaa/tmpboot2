@@ -1,6 +1,8 @@
 $(document).ready(function () {
+  $('#selectedoption').attr('required',true)
   $(".createform").submit(function (e) {
     $('.message').empty();
+    
     let mydata = $(this).serialize();
     $.post("/tmpboot2/admin/create_article.php", mydata).done(function( data ) {
       $( ".message" ).append("Donnée Envoyé avec succés");
@@ -8,4 +10,6 @@ $(document).ready(function () {
     });
     e.preventDefault();
   });
+
+  
 });

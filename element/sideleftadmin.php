@@ -2,7 +2,9 @@
   <div class="btn-group-vertical w-100 mx-auto" role="group" aria-label="Vertical button group">
 
     <button type="button" class="btn btn-secondary">
-      <a class="text-white text-decoration-none" href="">Tableau de bord</a>
+      <?php
+      echo '<a class="text-white text-decoration-none" href=' . __BASE_URI_ADMIN__ . '/index.php>Tableau de bord</a>';
+      ?>
     </button>
 
     <button type="button" class="btn btn-secondary">
@@ -18,12 +20,12 @@
 
     <button type="button" class="btn btn-secondary">
       <?php
-        echo '<a class="nav-link text-white" href=' . __BASE_URI_ADMIN__ . '/category.php>Catégorie</a>';
+      echo '<a class="nav-link text-white" href=' . __BASE_URI_ADMIN__ . '/category.php>Catégorie</a>';
       ?>
     </button>
     <button type="button" class="btn btn-secondary">
       <?php
-        echo '<a class="nav-link text-white" href=' . __BASE_URI_ADMIN__ . '/addcategory.php>Ajout catégorie</a>';
+      echo '<a class="nav-link text-white" href=' . __BASE_URI_ADMIN__ . '/addcategory.php>Ajout catégorie</a>';
       ?>
     </button>
 

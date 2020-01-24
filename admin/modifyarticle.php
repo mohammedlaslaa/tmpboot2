@@ -45,7 +45,7 @@ if (isset($_GET['edit'])) {
                     <div class="form-group">
                         <select name="valueselect" required>
                             <?php
-                            echo "<option>Choisir une catégorie</option>";
+                            echo "<option disabled selected>Choisir une catégorie</option>";
                             foreach ($jsoncat as $key => $val) {
                                 echo "<option value=" . $val['id'] . ">" . $val['name'] . "</option>";
                                 }

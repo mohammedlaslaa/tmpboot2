@@ -32,9 +32,9 @@ $jsoncat = json_decode(file_get_contents('../data/categories.json'), true);
                         <input type="text" class="form-control" id="title" name="title" required>
                     </div>
                     <div class="form-group">
-                        <select name="valueselect" required>
+                        <select name="valueselect" id="selectedoption">
                             <?php
-                            echo "<option>Choisir une catégorie</option>";
+                            echo "<option disabled selected>Choisir une catégorie</option>";
                             foreach ($jsoncat as $key => $val) {
                                 echo "<option value=" . $val['id'] . ">" . $val['name'] . "</option>";
                                 }

@@ -9,6 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
   foreach ($jsonto as $key) {
     if ($_POST['email'] == $key['email'] && password_verify($_POST["password"], $key['pwd'])) {
       $_SESSION['isConnected'] = "success";
+      setcookie("connection", 'ok', time()+3600);
       $_SESSION['user_right'] = $key['right'];
       header("Location: index.php");
     }
@@ -42,9 +43,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <body>
   <?php
   require_once('element/nav.php');
-  if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") {
+  if ((isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") || $_COOKIE["connection"] == 'ok') {
     if (isset($_GET["session"]) && $_GET["session"] == 'deconnect') {
       disconnect();
+      setcookie("connection", 'not', time()+3600);
       $_SESSION['verify'] = "";
     }
   ?>

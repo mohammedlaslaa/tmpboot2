@@ -26,6 +26,13 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
     <div class="row">
       <?php require('../element/sideleftadmin.php') ?>
       <div class="col-md-8">
+        <?php
+        if(isset($_GET['id']) &&$_GET['id'] == 'user'){
+          require_once('listuser.php');
+        }elseif(isset($_GET['edituser'])) {
+          require_once('edituser.php');
+        }
+        ?>
       </div>
     </div>
   </div>

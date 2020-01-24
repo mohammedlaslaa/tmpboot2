@@ -1,23 +1,34 @@
 [
   {
-    "nom": "Jean",
+    "id": 0,
+    "nom": "Jeanfhgh",
     "prenom": "Dupont",
     "email": "jean.dupont@gmail.com",
     "pwd": "$2y$10$FXyzNaCXRq.bz1s0Kw0TZuPxGXodM06NoOUJedSAsORLB55D0ybaG",
-    "right": 50
+    "right": "80"
   },
   {
-    "nom": "Jean",
-    "prenom": "Dupont",
+    "id": 1,
+    "nom": "Jeanb",
+    "prenom": "Dupontv",
     "email": "mohamed.laslaa@gmail.com",
     "pwd": "$2y$10$FXyzNaCXRq.bz1s0Kw0TZuPxGXodM06NoOUJedSAsORLB55D0ybaG",
-    "right": 20
+    "right": "20"
   },
   {
-    "nom": "Groote",
+    "id": 2,
+    "nom": "Grootevv",
     "prenom": "Arbre",
     "email": "route.arbre@gmail.com",
     "pwd": "$2y$10$FXyzNaCXRq.bz1s0Kw0TZuPxGXodM06NoOUJedSAsORLB55D0ybaG",
-    "right": 80
+    "right": "50"
+  },
+  {
+    "id": 3,
+    "nom": "Laslaa",
+    "prenom": "Mohammed",
+    "email": "jean.dupont@gmail.com",
+    "pwd": "$2y$10$fsKFYUtWpgtKWObmc1Nzk.5p0DSyWLlRZX5ZahoZLA0vD16bYUP7m",
+    "right": 0
   }
 ]

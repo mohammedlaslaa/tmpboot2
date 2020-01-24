@@ -3,6 +3,15 @@ session_start();
 include '../include/function.php';
 require('../include/define.php');
 $jsonto = json_decode(file_get_contents('../data/categories.json'), true);
+if (isset($_GET['edit'])) {
+    $_SESSION['value'] = $_GET['edit'];
+    foreach ($jsonto as $val) {
+        if ($_GET['edit'] == $val['id']) {
+            $holder = $val['name'];
+        }
+    }
+};
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,21 +35,10 @@ $jsonto = json_decode(file_get_contents('../data/categories.json'), true);
         <div class="row">
             <?php require('../element/sideleftadmin.php') ?>
             <div class="col-md-8 text-center my-2">
-                <form class="mx-auto col-6">
+                <form class="mx-auto col-6" method="post">
                     <div class="form-group">
-                        <input class="form-control" name="newscat"
-                        value=<?php 
-                        if(isset($_GET['edit'])){
-                            $_SESSION['value'] = $_GET['edit'];
-                            // var_dump($jsonto[0]['name']);
-                            foreach($jsonto as $val){
-                                if($_GET['edit'] == $val['id']){
-                                    echo htmlspecialchars($val['name']);
-                                }
-                            }
-                        }
-                        ?>
-                        >
+                        
+                        <input class="form-control" type="text" name="newscat" value="<?php echo $holder ?>">
                         </input>
                     </div>
                     <div class="form-group">
@@ -50,16 +48,17 @@ $jsonto = json_decode(file_get_contents('../data/categories.json'), true);
 
             </div>
             <?php
-            if(isset($_GET['newscat'])){
-                foreach($jsonto as $key => $val){
-                    if($_SESSION['value'] == $val['id']){
-                        $replace = [$key => ['name' =>$_GET['newscat'], 'id' => $val['id']] ];
+            if (isset($_POST['newscat'])) {
+                foreach ($jsonto as $key => $val) {
+                    if ($_SESSION['value'] == $val['id']) {
+                        $replace = [$key => ['name' => htmlspecialchars($_POST['newscat']), 'id' => $val['id']]];
                         $arraysubs = array_replace($jsonto, $replace);
                         $resultfinal = json_encode($arraysubs, JSON_PRETTY_PRINT);
                         file_put_contents('../data/categories.json', $resultfinal);
+                    }
                 }
+                header("Location: http://localhost/tmpboot2/admin/modifycategory?edit=" . $_SESSION['value']);
             }
-        }
 
             ?>
         </div>

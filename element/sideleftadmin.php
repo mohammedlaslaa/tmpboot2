@@ -7,6 +7,11 @@
 
     <button type="button" class="btn btn-secondary">
       <?php
+      echo '<a class="text-white text-decoration-none" href=' . __BASE_URI_ADMIN__ . '/article.php>Article</a>';
+      ?>
+    </button>
+    <button type="button" class="btn btn-secondary">
+      <?php
       echo '<a class="text-white text-decoration-none" href=' . __BASE_URI_ADMIN__ . '/create_article.php>Créer un article</a>';
       ?>
     </button>

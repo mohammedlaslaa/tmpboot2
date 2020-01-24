@@ -1,74 +1,50 @@
-[
-    {
-        "id": 0,
-        "titre": "Titre 1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 1
-    },
-    {
-        "id": 1,
-        "titre": "Titre 2",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 0
-    },
-    {
-        "id": 2,
-        "titre": "Titre 3",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 2
-    },
-    {
-        "id": 3,
-        "titre": "Titre 4",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 3
-    },
-    {
-        "id": 4,
-        "titre": "Titre 5",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 2
-    },
-    {
-        "id": 5,
-        "titre": "Titre 6",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 5
-    },
-    {
-        "id": 6,
-        "titre": "Titre 7",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 4
-    },
-    {
-        "id": 7,
-        "titre": "Titre 1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 3
-    },
-    {
-        "id": 8,
-        "titre": "Titre 8",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 2
-    },
-    {
-        "id": 9,
-        "titre": "Titre 22",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 5
-    },
-    {
-        "id": 10,
-        "titre": "Titre 9",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 4
-    },
-    {
-        "id": 11,
-        "titre": "Titre 10",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
-        "category_id": 5
-    }
-]
+{
+  "2": {
+    "titre": "Titre 3",
+    "description": "Je suis un texte",
+    "id": 2,
+    "category_id": "3"
+  },
+  "6": {
+    "id": 6,
+    "titre": "Titre 7",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 4
+  },
+  "7": {
+    "id": 7,
+    "titre": "Titre 1",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 3
+  },
+  "8": {
+    "id": 8,
+    "titre": "Titre 8",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 2
+  },
+  "9": {
+    "id": 9,
+    "titre": "Titre 22",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 3
+  },
+  "10": {
+    "id": 10,
+    "titre": "Titre 9",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 4
+  },
+  "11": {
+    "id": 11,
+    "titre": "Titre 10",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi ullam quia maiores quidem. Quis, odio, tempora ipsa tenetur quasi at exercitationem vel adipisci ipsam impedit sunt, dicta qui consequuntur.",
+    "category_id": 3
+  },
+  "12": {
+    "id": 12,
+    "titre": "fghfgh",
+    "description": "hfghfg",
+    "category_id": "1"
+  }
+}

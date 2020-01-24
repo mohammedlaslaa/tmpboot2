@@ -1,10 +1,26 @@
-[
-    {
-        "name": "Backend",
-        "id": 1
-    },
-    {
-        "name": "Expresso",
-        "id": 2
-    }
-]
+{
+  "1": {
+    "id": 2,
+    "name": "Back"
+  },
+  "2": {
+    "id": 3,
+    "name": "Front"
+  },
+  "3": {
+    "id": 4,
+    "name": "Full"
+  },
+  "4": {
+    "name": "Express and go",
+    "id": 1
+  },
+  "5": {
+    "name": "Express and go",
+    "id": 0
+  },
+  "6": {
+    "name": "Express and go",
+    "id": 6
+  }
+}

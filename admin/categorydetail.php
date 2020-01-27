@@ -2,7 +2,9 @@
 include '../include/function.php';
 session_start();
 require('../include/define.php');
-$jsonto = json_decode(file_get_contents('../data/user.json'), true);
+auth();
+
+$jsonto = getUsers();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,23 +22,23 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
 </head>
 
 <body class="bodyadmin">
-<?php require('../element/titleadmin.php') ?>
+    <?php require('../element/titleadmin.php') ?>
     <!-- Page Content -->
     <div class="container-fluid">
         <div class="row">
             <?php require('../element/sideleftadmin.php') ?>
-        <div class="col-md-8">
-            <?php
-            $category = file_get_contents('../data/categories.json');
-            $resultCat = json_decode($category, true);
-            foreach ($resultCat as $key => $value) {
-                if ($_GET['id'] == $value['id']) {
-                    echo "<h3 class='text-center mt-3'>" . $value['name'] . "</h3>";
+            <div class="col-md-8">
+                <?php
+                $category = file_get_contents('../data/categories.json');
+                $resultCat = json_decode($category, true);
+                foreach ($resultCat as $key => $value) {
+                    if ($_GET['id'] == $value['id']) {
+                        echo "<h3 class='text-center mt-3'>" . $value['name'] . "</h3>";
+                    }
                 }
-            }
-            ?>
+                ?>
+            </div>
         </div>
-    </div>
     </div>
     <?php
     require_once('../element/footeradmin.php');

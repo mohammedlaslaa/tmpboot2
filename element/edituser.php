@@ -31,15 +31,20 @@ foreach ($listuser as &$value) {
                 <label for="right">Droit utilisateur </label>
                 <select type="number" name="right" id="right">
                     <option selected value="<?php echo $value['right'] ?>"><?php echo $value['right'] ?></option>
-                    <option value="0">0</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
+                    <?php $tablevalue = ["0", "50", "80", "100"];
+                    foreach ($tablevalue as $val) {
+                        if ($val !== $value['right']) {
+                            echo "<option value=" . $val . ">" . $val . "</option>";
+                        }
+                    }
+                    ?>
                 </select>
             </div>
+            <button type="submit" class="btn btn-primary"><a href='index.php?id=user' class="text-white">Retour</a></button>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
 
 <?php
-}
+    }
 }
 ?>

@@ -35,7 +35,7 @@
                                                                                                                     } ?>">
                     </div>
                     <div class="form-group text-center">
-                        <button type="submit" value="Login" class="btn btn-primary login_btn text-white">Login</button>
+                        <button type="submit" value="Login" class="btn btn-primary login_btn text-white">Connexion</button>
                     </div>
                 </form>
             </div>

@@ -2,7 +2,8 @@
 include '../include/function.php';
 session_start();
 require('../include/define.php');
-$jsonto = json_decode(file_get_contents('../data/user.json'), true);
+auth();
+$jsonto = getUsers();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,24 +21,25 @@ $jsonto = json_decode(file_get_contents('../data/user.json'), true);
 </head>
 
 <body class="bodyadmin">
-<?php require('../element/titleadmin.php') ?>
-  <!-- Page Content -->
-  <div class="container-fluid">
-    <div class="row">
-      <?php require('../element/sideleftadmin.php') ?>
-      <div class="col-md-8">
-        <?php
-        if(isset($_GET['id']) &&$_GET['id'] == 'user'){
-          require_once('listuser.php');
-        }elseif(isset($_GET['edituser'])) {
-          require_once('edituser.php');
-        }
-        ?>
+  <?php
+    require('../element/titleadmin.php') ?>
+    <!-- Page Content -->
+    <div class="container-fluid">
+      <div class="row">
+        <?php require('../element/sideleftadmin.php') ?>
+        <div class="col-md-8">
+          <?php
+          if (isset($_GET['id']) && $_GET['id'] == 'user') {
+            require_once('../element/listuser.php');
+          } elseif (isset($_GET['edituser'])) {
+            require_once('../element/edituser.php');
+          }
+          ?>
+        </div>
       </div>
     </div>
-  </div>
   <?php
-  require_once('../element/footeradmin.php');
+    require_once('../element/footeradmin.php');
   ?>
 </body>
 

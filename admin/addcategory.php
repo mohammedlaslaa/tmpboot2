@@ -1,9 +1,9 @@
 <?php
-
 include '../include/function.php';
 session_start();
 require('../include/define.php');
-$jsonto = json_decode(file_get_contents('../data/user.json'), true);
+auth();
+$jsonto = getUsers();
 if (isset($_GET['delete'])) {
     deleteElementData($_GET['delete'], 'categories.json');
     header('Location: category.php');

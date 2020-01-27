@@ -2,7 +2,8 @@
 include '../include/function.php';
 session_start();
 require('../include/define.php');
-$jsonart = json_decode(file_get_contents('../data/articles.json'), true);
+auth();
+$jsonart = getArticles();
 if (isset($_GET['delete'])) {
     deleteElementData($_GET['delete'], 'articles.json');
 }

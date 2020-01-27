@@ -1,7 +1,7 @@
 <?php
 define('SUPER_ADMIN', 100);
 define('ADMIN', 50);
-define('USER', 20);
+define('USER', 0);
 define('ROOT_PATH', dirname(__FILE__) . '\..\\');
 define('ADMIN_PATH', dirname(__FILE__) . '\..\\admin\\');
 define('DATA_PATH', dirname(__FILE__) . '\..\\data\\');

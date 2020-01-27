@@ -2,8 +2,10 @@
 include '../include/function.php';
 session_start();
 require('../include/define.php');
-$jsonarticle = json_decode(file_get_contents('../data/articles.json'), true);
-$jsoncat = json_decode(file_get_contents('../data/categories.json'), true);
+auth();
+
+$jsonarticle = getArticles();
+$jsoncat = getCategories();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -2,15 +2,11 @@
 session_start();
 include '../include/function.php';
 require('../include/define.php');
-$jsonto = json_decode(file_get_contents('../data/categories.json'), true);
-if (isset($_GET['edit'])) {
-    $_SESSION['value'] = $_GET['edit'];
-    foreach ($jsonto as $val) {
-        if ($_GET['edit'] == $val['id']) {
-            $holder = $val['name'];
-        }
-    }
-};
+auth();
+$jsonto = getCategories();
+$holder;
+
+setsession($jsonto, $holder);
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +33,6 @@ if (isset($_GET['edit'])) {
             <div class="col-md-8 text-center my-2">
                 <form class="mx-auto col-6" method="post">
                     <div class="form-group">
-                        
                         <input class="form-control" type="text" name="newscat" value="<?php echo $holder ?>">
                         </input>
                     </div>

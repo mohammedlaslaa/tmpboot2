@@ -43,7 +43,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <body>
   <?php
   require_once('element/nav.php');
-  if ((isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success") || $_COOKIE["connection"] == 'ok') {
+  if (((isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == "success")) || (isset($_SESSION['isConnected']) && $_COOKIE["connection"] == 'ok')){
     if (isset($_GET["session"]) && $_GET["session"] == 'deconnect') {
       disconnect();
       setcookie("connection", 'not', time()+3600);

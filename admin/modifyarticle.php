@@ -1,9 +1,11 @@
 <?php
 session_start();
 include '../include/function.php';
+
 require('../include/define.php');
-$jsonart = json_decode(file_get_contents('../data/articles.json'), true);
-$jsoncat = json_decode(file_get_contents('../data/categories.json'), true);
+auth();
+$jsonart = getArticles();
+$jsoncat = getCategories();
 if (isset($_GET['edit'])) {
     $_SESSION['value'] = $_GET['edit'];
     foreach ($jsonart as $val) {

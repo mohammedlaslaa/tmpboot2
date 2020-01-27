@@ -31,9 +31,11 @@
                   </li>
                   <li class="nav-item">
                       <?php
+
                         if (isset($_SESSION['user_right']) && $_SESSION['user_right'] >= ADMIN) {
                             echo '<a class="nav-link text-primary" href=' . __BASE_URI_ADMIN__ . '/index.php>Admin</a>';
                         }
+                        
                         ?>
                   </li>
               </ul>
